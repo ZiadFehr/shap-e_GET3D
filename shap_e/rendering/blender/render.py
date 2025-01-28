@@ -136,6 +136,9 @@ def _blender_binary_path() -> str:
     if path is not None:
         return path
 
+    if os.path.exists("/snap/bin/blender"):
+        return "/snap/bin/blender"
+
     if os.path.exists("/Applications/Blender.app/Contents/MacOS/Blender"):
         return "/Applications/Blender.app/Contents/MacOS/Blender"
 
