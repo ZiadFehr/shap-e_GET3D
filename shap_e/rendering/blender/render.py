@@ -135,6 +135,9 @@ def _blender_binary_path() -> str:
     path = os.getenv("BLENDER_PATH", None)
     if path is not None:
         return path
+    
+    if os.path.exists('/content/blender'):
+        return "/content/blender"
 
     if os.path.exists("/snap/bin/blender"):
         return "/snap/bin/blender"
